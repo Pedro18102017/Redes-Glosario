@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glosario Digital Interactivo</title>
+    <!-- Incluye Tailwind CSS para un diseño moderno y responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+        .accordion-item {
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .accordion-header {
+            background-color: #fff;
+            cursor: pointer;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+        .accordion-content {
+            background-color: #f9fafb;
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        }
+        .accordion-content.active {
+            max-height: 500px; /* Ajusta este valor si el contenido es más largo */
+            padding: 1.5rem;
+        }
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+        .arrow.rotate {
+            transform: rotate(180deg);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body class="p-8">
+
+    <!-- Encabezado de la página -->
+    <div class="max-w-4xl mx-auto mb-8 text-center">
+        <h1 class="text-4xl font-bold text-gray-800 mb-2">Glosario de Alfabetización Digital</h1>
+        <p class="text-lg text-gray-600">
+            Conceptos clave para entender cómo funcionan las redes digitales.
+        </p>
+    </div>
+
+    <!-- Contenedor del glosario -->
+    <div class="max-w-4xl mx-auto space-y-4">
+
+        <!-- Término: Red informática -->
+        <div class="accordion-item bg-white rounded-lg shadow-md">
+            <div class="accordion-header" onclick="toggleAccordion('item-1')">
+                <span class="text-lg">Red informática</span>
+                <span class="arrow transition-transform transform">▼</span>
+            </div>
+            <div id="item-1" class="accordion-content">
+                <p><strong>Definición:</strong> Es un conjunto de ordenadores y dispositivos conectados entre sí para compartir recursos (como archivos o impresoras) e información. La conexión puede ser por cables o de forma inalámbrica.</p>
+                <p class="mt-2"><strong>Ejemplo:</strong> La red de tu casa, donde tu celular, tu computador y tu televisor están conectados al mismo router para acceder a internet y, a veces, compartir datos entre ellos.</p>
+                <img src="https://placehold.co/600x300/a1a1aa/ffffff?text=Red+Inform%C3%A1tica" alt="Ilustración de una red informática">
+            </div>
+        </div>
+
+        <!-- Término: Topología de red -->
+        <div class="accordion-item bg-white rounded-lg shadow-md">
+            <div class="accordion-header" onclick="toggleAccordion('item-2')">
+                <span class="text-lg">Topología de red</span>
+                <span class="arrow transition-transform transform">▼</span>
+            </div>
+            <div id="item-2" class="accordion-content">
+                <p><strong>Definición:</strong> Se refiere a la forma en que los diferentes dispositivos de una red están interconectados. Es como el "plano" de la red. Las más comunes son la de bus, estrella, anillo y malla.</p>
+                <p class="mt-2"><strong>Ejemplo:</strong> En una topología de "estrella", todos los ordenadores se conectan a un punto central (un switch o router). Si ese punto central falla, toda la red se cae.</p>
+                <img src="https://placehold.co/600x300/a1a1aa/ffffff?text=Topolog%C3%ADa+de+red" alt="Ilustración de diferentes topologías de red">
+            </div>
+        </div>
+
+        <!-- Término: Arquitectura de red -->
+        <div class="accordion-item bg-white rounded-lg shadow-md">
+            <div class="accordion-header" onclick="toggleAccordion('item-3')">
+                <span class="text-lg">Arquitectura de red</span>
+                <span class="arrow transition-transform transform">▼</span>
+            </div>
+            <div id="item-3" class="accordion-content">
+                <p><strong>Definición:</strong> Es el diseño completo de una red, incluyendo la topología, los protocolos utilizados, el tipo de hardware y software, y las reglas de comunicación. Define cómo la red está construida y cómo funciona.</p>
+                <p class="mt-2"><strong>Ejemplo:</strong> La arquitectura de red más común es la de "Cliente-Servidor", donde un servidor central gestiona y provee recursos a los clientes que se conectan a él.</p>
+                <img src="https://placehold.co/600x300/a1a1aa/ffffff?text=Arquitectura+de+red" alt="Ilustración de una arquitectura de red cliente-servidor">
+            </div>
+        </div>
+
+        <!-- Término: LAN -->
+        <div class="accordion-item bg-white rounded-lg shadow-md">
+            <div class="accordion-header" onclick="toggleAccordion('item-4')">
+                <span class="text-lg">LAN (Local Area Network)</span>
+                <span class="arrow transition-transform transform">▼</span>
+            </div>
+            <div id="item-4" class="accordion-content">
+                <p><strong>Definición:</strong> Una red de área local es una red que interconecta ordenadores en un área geográfica limitada, como una casa, un colegio o una oficina. Suelen ser privadas y más rápidas.</p>
+                <p class="mt-2"><strong>Ejemplo:</strong> La red Wi-Fi de tu casa que conecta tu computador, tu celular y otros dispositivos en la misma habitación.</p>
+                <img src="https://placehold.co/600x300/a1a1aa/ffffff?text=LAN" alt="Ilustración de una red LAN">
+            </div>
+        </div>
+
+        <!-- Término: WAN -->
+        <div class="accordion-item bg-white rounded-lg shadow-md">
+            <div class="accordion-header" onclick="toggleAccordion('item-5')">
+                <span class="text-lg">WAN (Wide Area Network)</span>
+                <span class="arrow transition-transform transform">▼</span>
+            </div>
+            <div id="item-5" class="accordion-content">
+                <p><strong>Definición:</strong> Una red de área extensa es una red que cubre un área geográfica muy grande, como una ciudad, un país o incluso el mundo entero. Internet es el ejemplo más grande de una WAN.</p>
+                <p class="mt-2"><strong>Ejemplo:</strong> Cuando accedes a una página web que está en otro país, estás usando una WAN para conectarte a su servidor.</p>
+                <img src="https://placehold.co/600x300/a1a1aa/ffffff?text=WAN" alt="Ilustración de una red WAN">
+            </div>
+        </div>
+
+        <!-- Término: Software Portable / Portable Apps -->
+        <div class="accordion-item bg-white rounded-lg shadow-md">
+            <div class="accordion-header" onclick="toggleAccordion('item-6')">
+                <span class="text-lg">Software Portable / Portable Apps</span>
+                <span class="arrow transition-transform transform">▼</span>
+            </div>
+            <div id="item-6" class="accordion-content">
+                <p><strong>Definición:</strong> Son programas que no necesitan ser instalados en un computador. Se pueden ejecutar directamente desde un dispositivo de almacenamiento externo, como una memoria USB.</p>
+                <p class="mt-2"><strong>Ejemplo:</strong> Usar la versión portable de un navegador o de un editor de texto desde una memoria USB en un computador que no es el tuyo, sin dejar rastros de instalación.</p>
+                <img src="https://placehold.co/600x300/a1a1aa/ffffff?text=Software+Portable" alt="Ilustración de un pendrive con software portable">
+            </div>
+        </div>
+
+        <!-- Término: Comunicación síncrona -->
+        <div class="accordion-item bg-white rounded-lg shadow-md">
+            <div class="accordion-header" onclick="toggleAccordion('item-7')">
+                <span class="text-lg">Comunicación síncrona</span>
+                <span class="arrow transition-transform transform">▼</span>
+            </div>
+            <div id="item-7" class="accordion-content">
+                <p><strong>Definición:</strong> Es la comunicación en tiempo real, donde el emisor y el receptor interactúan al mismo tiempo. No hay un retardo significativo en la transmisión del mensaje.</p>
+                <p class="mt-2"><strong>Ejemplo:</strong> Una videollamada o una clase en vivo, donde hablas y la otra persona te responde de inmediato.</p>
+                <img src="https://placehold.co/600x300/a1a1aa/ffffff?text=Comunicaci%C3%B3n+s%C3%ADncrona" alt="Ilustración de una videollamada">
+            </div>
+        </div>
+
+        <!-- Término: Comunicación asíncrona -->
+        <div class="accordion-item bg-white rounded-lg shadow-md">
+            <div class="accordion-header" onclick="toggleAccordion('item-8')">
+                <span class="text-lg">Comunicación asíncrona</span>
+                <span class="arrow transition-transform transform">▼</span>
+            </div>
+            <div id="item-8" class="accordion-content">
+                <p><strong>Definición:</strong> Es la comunicación que no ocurre en tiempo real. El emisor envía un mensaje y el receptor lo lee o responde en otro momento, sin que ambos estén conectados al mismo tiempo.</p>
+                <p class="mt-2"><strong>Ejemplo:</strong> El correo electrónico o los mensajes de un foro. Envías el mensaje y esperas una respuesta, que puede llegar en minutos, horas o días.</p>
+                <img src="https://placehold.co/600x300/a1a1aa/ffffff?text=Comunicaci%C3%B3n+as%C3%ADncrona" alt="Ilustración de un email">
+            </div>
+        </div>
+
+        <!-- Término: Protocolo -->
+        <div class="accordion-item bg-white rounded-lg shadow-md">
+            <div class="accordion-header" onclick="toggleAccordion('item-9')">
+                <span class="text-lg">Protocolo</span>
+                <span class="arrow transition-transform transform">▼</span>
+            </div>
+            <div id="item-9" class="accordion-content">
+                <p><strong>Definición:</strong> Un conjunto de reglas y normas que permiten a los dispositivos de una red comunicarse entre sí de forma eficiente. Es como el "idioma" que usan los computadores para entenderse.</p>
+                <p class="mt-2"><strong>Ejemplo:</strong> El protocolo HTTP (Hypertext Transfer Protocol) es el que usan los navegadores para solicitar y recibir páginas web de los servidores.</p>
+                <img src="https://placehold.co/600x300/a1a1aa/ffffff?text=Protocolo+de+Red" alt="Ilustración de un protocolo">
+            </div>
+        </div>
+
+        <!-- Término: Servidor -->
+        <div class="accordion-item bg-white rounded-lg shadow-md">
+            <div class="accordion-header" onclick="toggleAccordion('item-10')">
+                <span class="text-lg">Servidor</span>
+                <span class="arrow transition-transform transform">▼</span>
+            </div>
+            <div id="item-10" class="accordion-content">
+                <p><strong>Definición:</strong> Un ordenador o programa que almacena, gestiona y provee datos, recursos o servicios a otros ordenadores (los clientes) que están conectados en la misma red.</p>
+                <p class="mt-2"><strong>Ejemplo:</strong> Un servidor web que almacena la información de una página web y la envía a tu navegador cada vez que la solicitas.</p>
+                <img src="https://placehold.co/600x300/a1a1aa/ffffff?text=Servidor" alt="Ilustración de un servidor">
+            </div>
+        </div>
+
+        <!-- Término: Cliente -->
+        <div class="accordion-item bg-white rounded-lg shadow-md">
+            <div class="accordion-header" onclick="toggleAccordion('item-11')">
+                <span class="text-lg">Cliente</span>
+                <span class="arrow transition-transform transform">▼</span>
+            </div>
+            <div id="item-11" class="accordion-content">
+                <p><strong>Definición:</strong> Un ordenador o programa que solicita y consume los servicios o datos que le provee un servidor. Puede ser tu computador, tu celular o un navegador web.</p>
+                <p class="mt-2"><strong>Ejemplo:</strong> Cuando abres YouTube en tu celular, tu celular actúa como cliente solicitando videos al servidor de YouTube.</p>
+                <img src="https://placehold.co/600x300/a1a1aa/ffffff?text=Cliente" alt="Ilustración de un cliente de red">
+            </div>
+        </div>
+
+        <!-- Término Opcional 1: IP -->
+        <div class="accordion-item bg-white rounded-lg shadow-md">
+            <div class="accordion-header" onclick="toggleAccordion('item-12')">
+                <span class="text-lg">IP (Protocolo de Internet)</span>
+                <span class="arrow transition-transform transform">▼</span>
+            </div>
+            <div id="item-12" class="accordion-content">
+                <p><strong>Definición:</strong> Es una dirección única que identifica a un dispositivo en una red. Cada dispositivo conectado a internet tiene una dirección IP para poder enviar y recibir información correctamente.</p>
+                <p class="mt-2"><strong>Ejemplo:</strong> Tu dirección IP es como la dirección postal de tu casa. Permite que los paquetes de datos lleguen al destino correcto en internet.</p>
+                <img src="https://placehold.co/600x300/a1a1aa/ffffff?text=Direcci%C3%B3n+IP" alt="Ilustración de una dirección IP">
+            </div>
+        </div>
+
+        <!-- Término Opcional 2: DNS -->
+        <div class="accordion-item bg-white rounded-lg shadow-md">
+            <div class="accordion-header" onclick="toggleAccordion('item-13')">
+                <span class="text-lg">DNS (Sistema de Nombres de Dominio)</span>
+                <span class="arrow transition-transform transform">▼</span>
+            </div>
+            <div id="item-13" class="accordion-content">
+                <p><strong>Definición:</strong> Es un sistema que traduce los nombres de dominio (como `www.google.com`) a las direcciones IP numéricas que los ordenadores usan para comunicarse. Es como la agenda de contactos de internet.</p>
+                <p class="mt-2"><strong>Ejemplo:</strong> Cuando escribes "google.com" en tu navegador, el sistema DNS lo traduce automáticamente a la dirección IP del servidor de Google para que puedas conectarte.</p>
+                <img src="https://placehold.co/600x300/a1a1aa/ffffff?text=Sistema+DNS" alt="Ilustración de un sistema DNS">
+            </div>
+        </div>
+
+        <!-- Término Opcional 3: Router -->
+        <div class="accordion-item bg-white rounded-lg shadow-md">
+            <div class="accordion-header" onclick="toggleAccordion('item-14')">
+                <span class="text-lg">Router</span>
+                <span class="arrow transition-transform transform">▼</span>
+            </div>
+            <div id="item-14" class="accordion-content">
+                <p><strong>Definición:</strong> Un dispositivo que permite conectar varias redes y dirige los paquetes de datos entre ellas. En tu casa, es el aparato que te da la conexión a internet y crea tu red Wi-Fi.</p>
+                <p class="mt-2"><strong>Ejemplo:</strong> El router de tu casa recibe la señal de internet de tu proveedor y la distribuye a todos tus dispositivos (celular, televisor, computador) conectados a él.</p>
+                <img src="https://placehold.co/600x300/a1a1aa/ffffff?text=Router" alt="Ilustración de un router">
+            </div>
+        </div>
+
+        <!-- Término Opcional 4: Wi-Fi -->
+        <div class="accordion-item bg-white rounded-lg shadow-md">
+            <div class="accordion-header" onclick="toggleAccordion('item-15')">
+                <span class="text-lg">Wi-Fi</span>
+                <span class="arrow transition-transform transform">▼</span>
+            </div>
+            <div id="item-15" class="accordion-content">
+                <p><strong>Definición:</strong> Una tecnología de red que utiliza ondas de radio para conectar dispositivos a internet o a una red local sin necesidad de cables. Es la forma más común de conexión inalámbrica.</p>
+                <p class="mt-2"><strong>Ejemplo:</strong> Conectarte a internet desde tu celular o laptop en una cafetería, un aeropuerto o en tu propia casa sin usar un cable de red.</p>
+                <img src="https://placehold.co/600x300/a1a1aa/ffffff?text=Wi-Fi" alt="Ilustración del símbolo de Wi-Fi">
+            </div>
+        </div>
+
+        <!-- Término Opcional 5: Nube (Cloud) -->
+        <div class="accordion-item bg-white rounded-lg shadow-md">
+            <div class="accordion-header" onclick="toggleAccordion('item-16')">
+                <span class="text-lg">Nube (Cloud)</span>
+                <span class="arrow transition-transform transform">▼</span>
+            </div>
+            <div id="item-16" class="accordion-content">
+                <p><strong>Definición:</strong> Un término que se refiere al uso de servidores remotos conectados a internet para almacenar, administrar y procesar datos, en lugar de hacerlo en un disco duro local.</p>
+                <p class="mt-2"><strong>Ejemplo:</strong> Usar Google Drive, Dropbox o iCloud para guardar tus fotos y documentos. Puedes acceder a ellos desde cualquier dispositivo con conexión a internet.</p>
+                <img src="https://placehold.co/600x300/a1a1aa/ffffff?text=La+Nube" alt="Ilustración de la nube (cloud)">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Script de JavaScript para la interactividad del acordeón -->
+    <script>
+        function toggleAccordion(id) {
+            const content = document.getElementById(id);
+            const header = content.previousElementSibling;
+            const arrow = header.querySelector('.arrow');
+
+            // Cierra todos los demás elementos del acordeón
+            document.querySelectorAll('.accordion-content').forEach(item => {
+                if (item.id !== id && item.classList.contains('active')) {
+                    item.classList.remove('active');
+                    item.previousElementSibling.querySelector('.arrow').classList.remove('rotate');
+                }
+            });
+
+            // Alterna el estado del elemento actual
+            content.classList.toggle('active');
+            arrow.classList.toggle('rotate');
+        }
+    </script>
+
+</body>
+</html>
